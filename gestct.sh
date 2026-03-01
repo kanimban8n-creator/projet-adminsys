@@ -10,17 +10,32 @@
 #                                                              #
 ################################################################
 
-echo "
+if [ "$1" == "--create" ]; then
+    echo""
+    echo "Création des conteneurs"
+    echo""
 
-Option :
-        - -- Create : Lancer des conteneurs
+elif  [ "$1" == "--drop" ]; then
+    echo ""
+    echo "Supprimer les conteneurs"
+    echo ""
 
-        - -- Drop :   Supprimer les conteneurs
+elif [ "$1" == "--infos" ]; then
+    echo ""
+    echo "Caracteristiques des conteneurs"
+    echo ""
 
-        - -- Infos :  Caracteristiques des conteneurs ( IP, NOM, user)
-
-        - -- Start :  Demarrage des conteneurs
-
-        - -- Ansible: Déploiement arborescence ansible
-
-    "
+elif [ "$1" == "--ansible" ]; then
+    echo ""
+    echo "Le déploiement des conteneurs"
+    echo ""
+   
+else
+    echo "
+        - --create : Lancer des conteneurs
+        - --drop   : Supprimer les conteneurs
+        - --infos  : Caracteristiques des conteneurs (IP, NOM, user)
+        - --start  : Demarrage des conteneurs
+        - --ansible: Déploiement arborescence ansible
+        "
+fi
